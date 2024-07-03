@@ -74,7 +74,7 @@ export function useSetI18nParams(seoAttributes?: SeoAttributesOptions): SetI18nP
   const currentLocale = getNormalizedLocales(locales).find(l => l.code === locale) || { code: locale }
   const currentLocaleIso = currentLocale.iso
 
-  const setMeta = () => {
+  /*const setMeta = () => {
     const metaObject: HeadParam = {
       link: [],
       meta: []
@@ -99,11 +99,11 @@ export function useSetI18nParams(seoAttributes?: SeoAttributesOptions): SetI18nP
     }
 
     head?.push(metaObject)
-  }
+  }*/
 
   return function (params: Record<string, unknown>) {
     i18nParams.value = { ...params }
-    setMeta()
+    //setMeta()
   }
 }
 

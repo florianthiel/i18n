@@ -1,15 +1,8 @@
 {
   "name": "@nuxtjs/i18n",
   "description": "i18n for Nuxt",
-  "version": "8.3.1",
+  "version": "8.3.2",
   "homepage": "https://i18n.nuxtjs.org",
-  "bugs": {
-    "url": "https://github.com/nuxt-community/i18n-module/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nuxt-community/i18n-module.git"
-  },
   "license": "MIT",
   "contributors": [
     {

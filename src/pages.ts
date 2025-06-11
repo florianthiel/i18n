@@ -60,7 +60,7 @@ export function setupPages(options: Required<NuxtI18nOptions>, nuxt: Nuxt) {
 
     // keep root when using prefixed routing without prerendering
     const indexPage = pages.find(x => x.path === '/')
-    if (!nuxt.options._generate && options.strategy === 'prefix' && indexPage != null) {
+    if (!(nuxt.options.nitro.static || (nuxt.options as any)._generate /* TODO: remove in future */) && options.strategy === 'prefix' && indexPage != null) {
       localizedPages.unshift(indexPage)
     }
 

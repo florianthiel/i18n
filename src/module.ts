@@ -201,7 +201,7 @@ export default defineNuxtModule<NuxtI18nOptions>({
      * ignore `/` during prerender when using prefixed routing
      */
 
-    if (options.strategy === 'prefix' && nuxt.options._generate) {
+    if (options.strategy === 'prefix' && (nuxt.options.nitro.static || (nuxt.options as any)._generate /* TODO: remove in future */)) {
       const localizedEntryPages = normalizedLocales.map(x => ['/', x.code].join(''))
       nuxt.hook('nitro:config', config => {
         config.prerender ??= {}
@@ -249,7 +249,7 @@ export default defineNuxtModule<NuxtI18nOptions>({
         localeCodes,
         normalizedLocales,
         dev: nuxt.options.dev,
-        isSSG: nuxt.options._generate,
+        isSSG: nuxt.options.nitro.static || (nuxt.options as any)._generate /* TODO: remove in future */,
         parallelPlugin: options.parallelPlugin
       })
     }
